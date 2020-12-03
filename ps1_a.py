@@ -10,7 +10,7 @@ inter_arrival_min = 3
 service_time_max = 6
 service_time_min = 2
 
-n_events = 1000
+n_events = 30000
 np.random.seed(42)
 event = 0
 
@@ -62,7 +62,7 @@ while event <= n_events:
             time_series['served cust'].iloc[event-1] =  served_customers
 
             #generate next events (service and departure time)
-            service_time = random.expovariate(8)
+            service_time = random.expovariate(12)
             departure_time = time_ + service_time
             departed_customers += 1 #same customer that is served at arrival time departs are departure time
 
@@ -122,7 +122,7 @@ while event <= n_events:
             server_status = "busy"
             
             #generate next events (service and departure time)
-            service_time = random.expovariate(8)
+            service_time = random.expovariate(12)
             departure_time = time_ + service_time
             departed_customers += 1 #same customer that is served at arrival time departs are departure time
 
